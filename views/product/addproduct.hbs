@@ -1,0 +1,48 @@
+<h3>{{viewTitle}}</h3>
+<form action="/product" method="POST" autocomplete="off" enctype="multipart/form-data">
+    <input type="hidden" name="_id" value="{{product._id}}">
+    <div class="form-group">
+        <label>Product ID</label>
+        <input type="text" class="form-control" name="Product_ID" value="{{product.Product_ID}}" placeholder="Product ID">
+        <div class="text-danger">
+            {{product.Product_IDError}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" class="form-control" name="Product_Name" value="{{product.Product_Name}}" placeholder="Product Name">
+        <div class="text-danger">
+            {{product.Product_NameError}}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group md-6">
+            <label>Quantity</label>
+            <input type="number" name="Quantity" placeholder="Quantity" value="{{product.Quantity}}" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group md-6">
+            <label>Price</label>
+            <input type="text" name="Price" placeholder="Price" value="{{product.Price}}" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group md-6">
+            <label>Desciption</label>
+            <input type="text" name="Description" placeholder="Description" value="{{product.Description}}" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group md-6">
+            <label>Image</label>
+            <input type="file" name="image" id="image" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>
+        <a href="/product/list" class="btn btn-danger">
+            <i class="fa fa-list-alt"></i>View All
+        </a>
+    </div>
+</form>

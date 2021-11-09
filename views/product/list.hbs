@@ -1,0 +1,41 @@
+{{> header}}
+<h3>
+    <a href="/product" class="btn btn-danger">
+        <i class="fa fa-plus"> </i> Create New
+    </a>
+    Product List
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr align='center'>
+            <th style="width: 50px;">Product ID</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price ($)</th>
+            <th>Description</th>
+            <th>Illustration</th>
+            <th style="width: 20px;">Edit</th>
+            <th style="width: 20px;">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr align='center'>
+            <td>{{this.Product_ID}}</td>
+            <td>{{this.Product_Name}}</td>
+            <td>{{this.Quantity}}</td>
+            <td>{{this.Price}}</td>
+            <td>{{this.Description}}</td>
+            <td><img src="/{{this.imagename}}" alt="Illustration image" style="width: 150px; height: auto;"></td>
+            <td><a class="fa fa-pencil fa-lg" aria-hidden="true" href="/product/{{this._id}}"></a>
+            </td>
+            <td>
+                <a class="fa fa-trash fa-lg" aria-hidden="true" href="/product/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure to delete this record?');">
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{> footer}}
