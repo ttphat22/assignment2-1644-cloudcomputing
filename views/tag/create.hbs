@@ -1,0 +1,24 @@
+{{#extend "layouts"}}
+
+{{#content "main" mode="append"}}
+<form action="/tag/createOne" method="post">
+
+    <div class="mb-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name">
+    </div>
+    <div class="mb-3">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" name="description" id="description">
+    </div>
+    <div class="mb-3">
+        <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+        <input type="reset" class="btn btn-danger" value="Reset">
+    </div>
+    <img width="250px" src="/img/test.jpg" alt="">
+
+    </div>
+</form>
+{{/content}}
+
+{{/extend}}

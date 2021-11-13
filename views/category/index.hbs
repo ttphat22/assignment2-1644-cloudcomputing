@@ -1,0 +1,31 @@
+{{#extend "layouts"}}
+
+{{#content "main" mode="append"}}
+    <h1></h1>
+    <a href="/category/create" class="btn btn-primary">Add</a> <br><br>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Parent</th>
+            <th>Function</th>
+        </tr>
+        {{#each categories}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{category_name}}</td>
+                <td>{{description}}</td>
+                <td>{{parent}}</td>
+                <td>
+                    <a href="/category/delete/{{id}}"><i class="fa fa-trash"></i></a>
+                    <a href="/category/update/{{id}}"><i class="fa fa-pencil"></i></a>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+
+{{/content}}
+
+{{/extend}}

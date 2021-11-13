@@ -1,0 +1,56 @@
+{{#extend "layouts"}}
+
+{{#content "main" mode="append"}}
+<form action="/post/createOne" method="POST">
+    <div class="mb-3">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label for="sapo">Sapo</label>
+        <input type="text" name="sapo" id="sapo" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label for="content">Content</label>
+        <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="tag">Tag</label>
+        <div class="row">
+            {{#each tags}}
+            <div class="col-md-3 col">
+                <input type="checkbox" name="tag[]" value="{{id}}" id="{{id}}" class="" />
+                <label for="{{id}}">{{tag_name}}</label>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="category">Category</label>
+        <div class="row">
+            {{#each categories}}
+            <div class="col-md-3 col">
+                <input type="checkbox" name="category[]" value="{{id}}" id="{{id}}" class="" />
+                <label for="{{id}}">{{category_name}}</label>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="relate">Relate Post</label>
+        {{#each posts}}
+        <div class="relate">
+            <input type="checkbox" name="post[]" value="{{id}}" id="{{id}}" class="form-control" />
+            <label for="{{id}}">{{title}}</label>
+        </div>
+        {{/each}}
+    </div>
+    <div class="mb-3">
+        <input type="submit" value="Submit" class="btn btn-primary">
+        <input type="reset" value="Reset" class="btn btn-danger">
+    </div>
+    <div class="mb-3"></div>
+</form>
+{{/content}}
+
+{{/extend}}

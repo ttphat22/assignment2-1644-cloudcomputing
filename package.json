@@ -1,0 +1,21 @@
+{
+  "name": "testmysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "handlebars": "^4.7.7",
+    "handlebars-layouts": "^3.1.4",
+    "hbs": "^4.1.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5"
+  }
+}
